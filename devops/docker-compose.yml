@@ -22,7 +22,7 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - 'redis_data:/data'
+      - 'livedj_redis_data:/data'
     networks:
       livedj_storage:
         aliases:
@@ -42,7 +42,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - 'pg_data:/var/lib/postgresql/data'
+      - 'livedj_pg_data:/var/lib/postgresql/data'
     networks:
       livedj_storage:
         aliases:
@@ -60,7 +60,7 @@ services:
     ports:
         - 5050:80
     volumes:
-      - 'pgadmin_data:/var/lib/pgadmin'
+      - 'livedj_pgadmin_data:/var/lib/pgadmin'
     networks:
       livedj_admin:
         aliases:
@@ -70,6 +70,6 @@ networks:
   livedj_storage:
   livedj_admin:
 volumes:
-  redis_data:
-  pg_data:
-  pgadmin_data:
+  livedj_redis_data:
+  livedj_pg_data:
+  livedj_pgadmin_data:
